@@ -1,0 +1,31 @@
+/* Drumpad container */
+#display {
+  border: 2px solid skyblue;
+  margin: 0 auto;
+  width: 12%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Drumpad */
+
+.Drumpad {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px black;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.Drumpad:active {
+  transform: scale(0.9);
+}
+
+.highlight {
+  background-color: lightsalmon;
+}
