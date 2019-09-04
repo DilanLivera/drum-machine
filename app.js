@@ -67,7 +67,32 @@ class App extends React.Component {
                                                                                 sound={ sound }  /> )
     return (
       <div id="display">
-        { drumpadList }
+        <div className="drumpads">
+          { drumpadList }
+        </div>
+        <div className="controls">
+          {/* power button */}
+          <div className="powerButton">
+            <p>Power</p>
+            <label className="switch">
+              <input type="checkbox" />
+              <span className="slider"></span>
+            </label>
+          </div>
+
+          <label className="infoLabel">Open HH</label>
+          {/* value="50"*/}
+          <input type="range" min="1" max="100" className="volume-slider" />
+
+          {/* Bank button */}
+          <div className="bankButton">
+            <p>Bank</p>
+            <label className="switch">
+              <input type="checkbox" />
+              <span className="slider"></span>
+            </label>
+          </div>
+        </div>
       </div>
     );
   }
