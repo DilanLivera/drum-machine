@@ -1,22 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
 
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: lightslategrey;
+}
 
 /* Drumpad container */
 #display {
   width: 40%;
-  height: 300px;
+  min-height: 300px;
   border: 2px solid lightcoral;
   display: flex;
   justify-content: space-around;
-  margin: 100px auto;
+  margin: auto;
   font-family: "Montserrat";
   font-weight: 500;
+  background-color: #2196F3;
 }
 
 .drumpads {
   /* border: 2px solid skyblue; */
   margin: 0 auto;
-  width: 30%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,10 +34,9 @@
 }
 
 /* Drumpad */
-
-.Drumpad {
-  width: 50px;
-  height: 50px;
+.drum-pad {
+  width: 90px;
+  height: 70px;
   margin: 5px;
   border: 1px solid black;
   border-radius: 5px;
@@ -38,9 +46,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 }
 
-.Drumpad:active {
+.drum-pad:active {
   transform: scale(0.9);
 }
 
@@ -49,7 +58,6 @@
 }
 
 /* Controls */
-
 .controls {
   display: flex;
   flex-direction: column;
@@ -64,8 +72,10 @@
 .infoLabel {
   background-color: lightslategrey;
   width: 150px;
+  height: 20px;
   text-align: center;
   padding: 4px;
+  border: 2px solid black;
 }
 
 
@@ -74,7 +84,7 @@
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 26px;
 }
 
 .switch input {
@@ -91,6 +101,7 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
+  border: 2px solid black;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -98,26 +109,22 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 12px;
+  width: 18px;
   left: 4px;
-  bottom: 4px;
+  bottom: 3px;
   background-color: white;
+  border: 2px solid black;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
-}
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
+  background-color: rgb(201, 52, 32);
   transform: translateX(26px);
 }
 
