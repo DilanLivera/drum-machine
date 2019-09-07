@@ -80,6 +80,7 @@ class App extends React.Component {
     }
     this.handlePowerClick = this.handlePowerClick.bind(this);
     this.handleBankClick = this.handleBankClick.bind(this);
+    this.onVolumeClick = this.onVolumeClick.bind(this);
   }
 
   handlePowerClick(evt) {
@@ -92,6 +93,17 @@ class App extends React.Component {
     if( bank > 0) --bank;
     else ++bank;
     this.setState( { ...this.state, bank });
+  }
+
+  onVolumeClick(evt) {
+    if(!this.state.disabled) {
+      const volume = evt.target.value;
+      let clips = document.querySelectorAll(".clip");
+      let infoLabel = document.querySelector(".infoLabel")
+      infoLabel.innerText = ` Volume: ${volume}`;
+      setTimeout(() => infoLabel.innerText = "", 400);
+      clips.forEach( clip => clip.volume = volume/100 );
+    }
   }
 
   render() {
@@ -120,7 +132,7 @@ class App extends React.Component {
 
           <label className="infoLabel"></label>
           {/* value="50"*/}
-          <input type="range" min="1" max="100" className="volume-slider" />
+          <input type="range" min="1" max="100" className="volume-slider" onClick={ this.onVolumeClick } />
 
           {/* Bank button */}
           <div className="bankButton">
